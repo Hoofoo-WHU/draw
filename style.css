@@ -1,0 +1,134 @@
+/* css reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  text-decoration: none
+}
+
+li {
+  list-style: none;
+}
+
+/* canvas */
+
+.canvas {
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  background: white;
+  box-shadow: 0 0 8px 2px #3331;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.header>.tools, .actions, .thicknesses, .colors, .files {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header>.files {
+  float: right;
+}
+
+.header>.actions {
+  margin-right: 20px;
+}
+
+.header>.tools>.icon.active {
+  fill: blue;
+  transform: scale(1.2);
+}
+
+.header>.thicknesses {
+  margin: 10px 0;
+  margin-right: 20px;
+}
+
+@media (max-width: 750px) {
+  .header>.colors {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateX(50%) rotate(90deg);
+  }
+}
+
+@media(max-width:500px) {
+  .header>.thicknesses {
+    position: fixed;
+    left: 13px;
+    top: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+.header>.thicknesses>.t {
+  display: inline-block;
+  vertical-align: top;
+  height: 24px;
+  line-height: 24px;
+  width: 18px;
+  font-size: 0;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.header>.thicknesses>.t>span {
+  display: inline-block;
+  background-color: #333;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid white;
+}
+
+.header>.thicknesses>.t.active {
+  border-bottom: 2px solid blue;
+}
+
+.header>.colors {
+  font-size: 0;
+  margin: 7px 0;
+  cursor: pointer;
+}
+
+.header>.colors>.color {
+  vertical-align: top;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  box-sizing: border-box;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: all .3s;
+}
+
+.header>.colors>.color.active {
+  box-shadow: 0 0 0 2px blue;
+}
+
+.header .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  fill: #333;
+  overflow: hidden;
+  margin: 10px;
+  cursor: pointer;
+  transition: all .3s;
+}
